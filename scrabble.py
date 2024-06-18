@@ -6,3 +6,12 @@ letter_to_points = {key: value for key, value in zip(letters, points)}
 
 #Added new key to dictionary
 letter_to_points[" "] = 0 
+
+#Function that returns the value of any given word
+def score_word(word):
+  point_total = 0
+  for letter in word:
+    word_value = letter_to_points.get(letter, 0)
+    point_total += word_value
+  return point_total
+
