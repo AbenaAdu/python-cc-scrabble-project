@@ -24,3 +24,13 @@ for player, words in player_to_words.items():
   for word in words:
     player_points += score_word(word)
   player_to_points[player] = player_points
+
+#Created a function that adds a player and word and will add a new word to the list of values for an already existing player
+players_and_words= {}
+def play_word(player, word):
+  if player not in players_and_words.keys():
+    players_and_words[player] = word
+  elif type(players_and_words[player]) == list:
+    players_and_words[player].append(word)
+  else:
+    players_and_words[player] = [players_and_words[player], word]
